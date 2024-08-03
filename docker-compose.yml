@@ -1,0 +1,19 @@
+version: '3.3'
+networks:
+  caddy:
+services:
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    container_name: caddy
+    ports:
+      - 80:80
+    volumes:
+      - ./index.html:/usr/share/caddy/index.html
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - caddy
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
