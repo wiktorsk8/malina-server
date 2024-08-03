@@ -1,0 +1,2 @@
+# malina-server
+test
